@@ -42,7 +42,7 @@
 
   } @else {
 
-    @error 'Childs should always have a parent';
+    @error 'Children should have a parent';
   }
 }
 
@@ -57,6 +57,6 @@
 
   } @else {
 
-    @error 'Modifiers should always have a parent';
+    @error 'Modifiers should have a parent';
   }
 }
