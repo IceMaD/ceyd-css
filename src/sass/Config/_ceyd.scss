@@ -22,7 +22,9 @@
 }
 
 @mixin component($name) {
+
   .#{$name} {
+
     @extend %scope-reset;
 
     @content
@@ -30,21 +32,31 @@
 }
 
 @mixin child($name) {
+
   @if & {
+
     &_#{$name} {
+
       @content
     }
+
   } @else {
+
     @error 'Childs should always have a parent';
   }
 }
 
 @mixin modifier($name) {
+
   @if & {
+
     &.\--#{$name} {
+
       @content
     }
+
   } @else {
+
     @error 'Modifiers should always have a parent';
   }
 }
