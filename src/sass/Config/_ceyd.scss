@@ -23,11 +23,19 @@
 
 @mixin component($name) {
 
-  .#{$name} {
+  @if & {
 
-    @extend %scope-reset;
+    @error 'Component should not have a parent';
+  }
 
-    @content
+  @else {
+
+    .#{$name} {
+
+      @extend %scope-reset;
+
+      @content
+    }
   }
 }
 
@@ -39,8 +47,9 @@
 
       @content
     }
+  }
 
-  } @else {
+  @else {
 
     @error 'Children should have a parent';
   }
@@ -54,8 +63,9 @@
 
       @content
     }
+  }
 
-  } @else {
+  @else {
 
     @error 'Modifiers should have a parent';
   }
