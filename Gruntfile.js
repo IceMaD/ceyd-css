@@ -33,10 +33,12 @@ module.exports = function(grunt) {
         }
     };
 
+    ConfigBuild.config.connect = {server: {}};
+
     ConfigBuild.addSass('style');
     ConfigBuild.addWatch('sass', 'style');
 
     grunt.initConfig(ConfigBuild.config);
 
-    grunt.registerTask('default', ['watch']);
+    grunt.registerTask('default', ['connect', 'watch']);
 };
