@@ -5,7 +5,12 @@ module.exports = function(grunt) {
     var ConfigBuild = {
         config: {},
 
-        addSass: function(name) {
+        reloadOptions: {
+            interrupt: true,
+            livereload: true
+        },
+
+        sass: function(name) {
             this.config.sass = this.config.sass || {};
 
             var config = {
@@ -19,24 +24,31 @@ module.exports = function(grunt) {
             return this;
         },
 
-        addWatch: function(directory, name) {
+        watch: function(directory, name) {
             this.config.watch = this.config.watch || {};
 
             this.config.watch[name] = {
                 files: 'src/' + directory + '/**/*.scss',
                 tasks: [directory + ':' + name],
-                options: {
-                    interrupt: true,
-                    livereload: true
-                }
+                options: this.reloadOptions
+            }
+        },
+
+        reloadOnChange: function(name, files) {
+            this.config.watch = this.config.watch || {};
+
+            this.config.watch[name] = {
+                files: files,
+                options: this.reloadOptions
             }
         }
     };
 
     ConfigBuild.config.connect = {server: {}};
 
-    ConfigBuild.addSass('style');
-    ConfigBuild.addWatch('sass', 'style');
+    ConfigBuild.sass('style');
+    ConfigBuild.watch('sass', 'style');
+    ConfigBuild.reloadOnChange('html', '**/*.html');
 
     grunt.initConfig(ConfigBuild.config);
 
