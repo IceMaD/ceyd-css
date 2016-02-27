@@ -448,8 +448,13 @@ _CSS_
 }
 ```
 
-# How to use - snippets
+# How to use
 
 Keep up to date a page where you can see all components in use.
 Also, list all modifier with the result.
 
+# See also
+
+- [When to use class, id, attributes ?](SeeAlso/class-id-attr.md)
+- [Documentation](SeeAlso/documentation.md)
+- [Prefix](SeeAlso/prefix.md)
