@@ -30,7 +30,9 @@
 
   @else {
 
-    .#{$name} {
+    $component: '.#{$name}' !global; // See https://github.com/sass/sass/issues/871
+
+    #{$component} {
 
       @extend %scope-reset;
 

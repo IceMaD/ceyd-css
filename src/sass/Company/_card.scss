@@ -13,6 +13,10 @@
 
   @include child(image) {
 
+    #{$component}:hover & {
+      opacity: .5;
+    }
+
     width: 100%;
   }
 
