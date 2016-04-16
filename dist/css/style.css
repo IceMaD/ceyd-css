@@ -1,0 +1,272 @@
+/**
+ * Maybe someday
+ *
+ * http://stackoverflow.com/questions/15748937/how-to-define-a-dynamic-mixin-or-function-name-in-sass
+ */
+.text, .card, .grid {
+  display: block;
+  color: #444;
+  direction: ltr;
+  font-family: Roboto, sans-serif;
+  font-size: 1.4rem;
+  font-style: normal;
+  font-weight: 300;
+  letter-spacing: 0;
+  line-height: 1;
+  text-align: left;
+  text-indent: 0;
+  text-transform: none;
+  visibility: visible;
+  white-space: normal;
+  word-spacing: normal;
+  margin: 0 !important; }
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 1em;
+  vertical-align: baseline; }
+
+article, aside, details, figcaption, figure,
+footer, header, menu, nav, section {
+  display: block; }
+
+html {
+  font-size: 62.5%; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+* {
+  box-sizing: border-box; }
+
+.text {
+  font-weight: 300;
+  color: #888888;
+  line-height: 1.5em;
+  margin: 0;
+  /* --- Hierarchy --- */
+  /* --- Colors ------ */ }
+  .text.\--inline {
+    display: inline; }
+  .text.\--align-center {
+    text-align: center;
+    justify-content: center; }
+  @media (max-width: 767px) {
+    .text.\--align-center\@to-phablet {
+      text-align: center;
+      justify-content: center; } }
+  @media (max-width: 479px) {
+    .text.\--align-center\@phone {
+      text-align: center;
+      justify-content: center; } }
+  .text.\--align-right {
+    text-align: right; }
+  .text.\--bold {
+    font-weight: 500; }
+  .text.\--peta {
+    font-size: 3.6rem;
+    line-height: 1.3em; }
+  .text.\--tera {
+    font-size: 3.0rem;
+    line-height: 1.3em; }
+  .text.\--giga {
+    font-size: 2.4rem;
+    line-height: 1.3em; }
+  .text.\--mega {
+    font-size: 1.8rem;
+    line-height: 1.5em; }
+  .text.\--kilo {
+    font-size: 1.6rem;
+    line-height: 1.5em; }
+  .text.\--milli {
+    text-transform: uppercase;
+    font-size: 1.2rem;
+    line-height: 1.5em; }
+  .text.\--micro {
+    font-size: 1.2rem;
+    line-height: 1.5em; }
+  .text.\--success {
+    color: #7ae760; }
+  .text.\--error {
+    color: #e74c3c; }
+  .text.\--trapped {
+    color: #eeeeee; }
+
+.card {
+  border: 1px solid #eeeeee;
+  background-color: #ffffff;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100%; }
+  @media (min-width: 768px) {
+    .card {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between; } }
+  .card_image {
+    transition: all .3s;
+    width: 100%;
+    height: 200px;
+    background: center/cover no-repeat; }
+    .card:hover .card_image {
+      opacity: .5; }
+  .card_title {
+    margin: 1em 0;
+    padding: 0 1em; }
+  .card_content {
+    margin-top: 0.5em;
+    padding-left: 1em;
+    padding-right: 1em;
+    flex-grow: 1; }
+  .card_footer {
+    margin-top: 0.5em;
+    display: flex;
+    justify-content: space-between;
+    padding: 1em; }
+
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  background-color: #eeeeee; }
+  .grid_element {
+    padding: .5em;
+    display: flex; }
+    .grid_element.\--full {
+      flex: 100% 0 0;
+      width: 100%; }
+    @media (max-width: 479px) {
+      .grid_element.\--full\@phone {
+        flex: 100% 0 0;
+        width: 100%; } }
+    @media (min-width: 480px) {
+      .grid_element.\--full\@from-phablet {
+        flex: 100% 0 0;
+        width: 100%; } }
+    @media (min-width: 480px) and (max-width: 767px) {
+      .grid_element.\--full\@phablet {
+        flex: 100% 0 0;
+        width: 100%; } }
+    @media (max-width: 767px) {
+      .grid_element.\--full\@to-phablet {
+        flex: 100% 0 0;
+        width: 100%; } }
+    @media (min-width: 768px) {
+      .grid_element.\--full\@from-tablet {
+        flex: 100% 0 0;
+        width: 100%; } }
+    @media (min-width: 768px) and (max-width: 1023px) {
+      .grid_element.\--full\@tablet {
+        flex: 100% 0 0;
+        width: 100%; } }
+    @media (max-width: 1023px) {
+      .grid_element.\--full\@to-tablet {
+        flex: 100% 0 0;
+        width: 100%; } }
+    @media (min-width: 1024px) {
+      .grid_element.\--full\@from-desktop {
+        flex: 100% 0 0;
+        width: 100%; } }
+    .grid_element.\--half {
+      flex: 50% 0 0;
+      width: 50%; }
+    @media (min-width: 480px) and (max-width: 767px) {
+      .grid_element.\--half\@phablet {
+        flex: 50% 0 0;
+        width: 50%; } }
+    @media (max-width: 767px) {
+      .grid_element.\--half\@to-phablet {
+        flex: 50% 0 0;
+        width: 50%; } }
+    @media (min-width: 768px) {
+      .grid_element.\--half\@from-tablet {
+        flex: 50% 0 0;
+        width: 50%; } }
+    @media (min-width: 768px) and (max-width: 1023px) {
+      .grid_element.\--half\@tablet {
+        flex: 50% 0 0;
+        width: 50%; } }
+    @media (max-width: 1023px) {
+      .grid_element.\--half\@to-tablet {
+        flex: 50% 0 0;
+        width: 50%; } }
+    @media (min-width: 1024px) {
+      .grid_element.\--half\@from-desktop {
+        flex: 50% 0 0;
+        width: 50%; } }
+    .grid_element.\--third {
+      flex: 33.33333% 0 0;
+      width: 33.33333%; }
+    @media (min-width: 768px) and (max-width: 1023px) {
+      .grid_element.\--third\@tablet {
+        flex: 33.33333% 0 0;
+        width: 33.33333%; } }
+    @media (max-width: 1023px) {
+      .grid_element.\--third\@to-tablet {
+        flex: 33.33333% 0 0;
+        width: 33.33333%; } }
+    @media (min-width: 1024px) {
+      .grid_element.\--third\@from-desktop {
+        flex: 33.33333% 0 0;
+        width: 33.33333%; } }
+    .grid_element.\--two-third {
+      flex: 66.66667% 0 0;
+      width: 66.66667%; }
+    @media (min-width: 768px) and (max-width: 1023px) {
+      .grid_element.\--two-third\@tablet {
+        flex: 66.66667% 0 0;
+        width: 66.66667%; } }
+    @media (max-width: 1023px) {
+      .grid_element.\--two-third\@to-tablet {
+        flex: 66.66667% 0 0;
+        width: 66.66667%; } }
+    @media (min-width: 1024px) {
+      .grid_element.\--two-third\@from-desktop {
+        flex: 66.66667% 0 0;
+        width: 66.66667%; } }
+    .grid_element.\--auto {
+      flex: 400px 0 0;
+      width: 400px; }
+    @media (min-width: 1024px) {
+      .grid_element.\--auto\@from-desktop {
+        flex: 400px 0 0;
+        width: 400px; } }
+    .grid_element.\--twice {
+      flex: 800px 0 0;
+      width: 800px; }
+    @media (min-width: 1024px) {
+      .grid_element.\--twice\@from-desktop {
+        flex: 800px 0 0;
+        width: 800px; } }
+
+/*# sourceMappingURL=style.css.map */
