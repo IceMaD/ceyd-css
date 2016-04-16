@@ -1,5 +1,6 @@
 $base-text-color: black !default;
 $base-font-family: sans-serif !default;
+$base-font-size: 1.4rem;
 $base-media-queries: () !default;
 
 $ceyd-prefix: '';
@@ -12,7 +13,7 @@ $ceyd-prefix: '';
     color: $color;
     direction: ltr;
     font-family: $font-family;
-    font-size: 1.6rem;
+    font-size: $base-font-size;
     font-style: normal;
     font-weight: 300;
     letter-spacing: 0;

@@ -3,6 +3,7 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    background-color: $grey-smoke;
 
     @include child(element) {
         padding: .5em;

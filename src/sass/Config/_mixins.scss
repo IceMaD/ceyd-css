@@ -1,0 +1,33 @@
+/**
+ * Maybe someday
+ *
+ * http://stackoverflow.com/questions/15748937/how-to-define-a-dynamic-mixin-or-function-name-in-sass
+ */
+// @each $medium, $query in $base-media-queries {
+//     @mixin #{$medium} {
+//         @media #{$query} {
+//             @content
+//         }
+//     }
+// }
+
+// Phone
+@mixin phone {        @media #{map_get($base-media-queries, phone        )} {@content;}}
+
+// Phablet
+@mixin from-phablet { @media #{map_get($base-media-queries, from-phablet )} {@content;}}
+@mixin on-phablet {   @media #{map_get($base-media-queries, on-phablet   )} {@content;}}
+@mixin to-phablet {   @media #{map_get($base-media-queries, to-phablet   )} {@content;}}
+
+// Tablet
+@mixin from-tablet {  @media #{map_get($base-media-queries, from-tablet  )} {@content;}}
+@mixin on-tablet {    @media #{map_get($base-media-queries, on-tablet    )} {@content;}}
+@mixin to-tablet {    @media #{map_get($base-media-queries, to-tablet    )} {@content;}}
+
+// Desktop
+@mixin from-desktop { @media #{map_get($base-media-queries, from-desktop )} {@content;}}
+@mixin desktop {      @media #{map_get($base-media-queries, desktop      )} {@content;}}
+@mixin to-desktop {   @media #{map_get($base-media-queries, to-desktop   )} {@content;}}
+
+// Ultra
+@mixin ultra {        @media #{map_get($base-media-queries, ultra        )} {@content;}}
