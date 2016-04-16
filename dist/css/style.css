@@ -1,7 +1,6 @@
-.card, .card-gallery {
+.card, .grid {
   display: block;
   color: #444;
-  cursor: default;
   direction: ltr;
   font-family: Roboto, sans-serif;
   font-size: 1.6rem;
@@ -61,12 +60,14 @@ table {
   border-collapse: collapse;
   border-spacing: 0; }
 
+* {
+  box-sizing: border-box; }
+
 .card {
   box-shadow: 1px 1px 0 0 #d5d5d5;
   border: 1px solid #eeeeee;
   border-radius: 5px;
-  width: 300px;
-  margin: 1em; }
+  margin: 0 !important; }
   .card_image {
     width: 100%; }
     .card:hover .card_image {
@@ -94,10 +95,33 @@ table {
   .card_date {
     font-style: italic; }
 
-.card-gallery {
+.grid {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  align-items: center; }
+  align-items: center;
+  margin: 0 !important; }
+  .grid_element {
+    padding: .5em; }
+    .grid_element.\--full {
+      flex: 100% 0 0; }
+    @media (max-width: 479px) {
+      .grid_element.\--full\@phone {
+        flex: 100% 0 0; } }
+    .grid_element.\--half {
+      flex: 50% 0 0; }
+    @media (min-width: 480px) and (max-width: 767px) {
+      .grid_element.\--half\@phablet {
+        flex: 50% 0 0; } }
+    .grid_element.\--third {
+      flex: 33.33333% 0 0; }
+    @media (min-width: 768px) and (max-width: 1023px) {
+      .grid_element.\--third\@tablet {
+        flex: 33.33333% 0 0; } }
+    .grid_element.\--auto {
+      flex: 400px 0 0; }
+    @media (min-width: 1024px) {
+      .grid_element.\--auto\@from-desktop {
+        flex: 400px 0 0; } }
 
 /*# sourceMappingURL=style.css.map */

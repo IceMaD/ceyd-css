@@ -1,74 +1,95 @@
+$base-text-color: black !default;
+$base-font-family: sans-serif !default;
+$base-media-queries: () !default;
+
+$ceyd-prefix: '';
+
 %scope-reset {
+    $color: $base-text-color;
+    $font-family: $base-font-family;
 
-  $color: $base-text-color;
-  $font-family: $base-font-family;
-
-  display: block;
-  color: $color;
-  cursor: default;
-  direction: ltr;
-  font-family: $font-family;
-  font-size: 1.6rem;
-  font-style: normal;
-  font-weight: 300;
-  letter-spacing: 0;
-  line-height: 1;
-  text-align: left;
-  text-indent: 0;
-  text-transform: none;
-  visibility: visible;
-  white-space: normal;
-  word-spacing: normal;
+    display: block;
+    color: $color;
+    direction: ltr;
+    font-family: $font-family;
+    font-size: 1.6rem;
+    font-style: normal;
+    font-weight: 300;
+    letter-spacing: 0;
+    line-height: 1;
+    text-align: left;
+    text-indent: 0;
+    text-transform: none;
+    visibility: visible;
+    white-space: normal;
+    word-spacing: normal;
 }
 
 @mixin component($name) {
 
-  @if & {
+    @if & {
 
-    @error 'Component should not have a parent';
-  }
+        @error 'Component should not have a parent';
 
-  @else {
+    } @else {
 
-    $component: '.#{$name}' !global; // See https://github.com/sass/sass/issues/871
+        .#{if($ceyd-prefix and $ceyd-prefix != '', $ceyd-prefix + '-', '') + $name} {
 
-    #{$component} {
+            $component: '.#{$name}' !global; // See https://github.com/sass/sass/issues/871
 
-      @extend %scope-reset;
+            @extend %scope-reset;
+            @content;
 
-      @content
+            margin: 0 !important;
+        }
     }
-  }
 }
 
 @mixin child($name) {
 
-  @if & {
+    @if & {
 
-    &_#{$name} {
+        &_#{$name} {
 
-      @content
+            @content
+        }
+
+    } @else {
+
+        @error 'Children should have a parent';
     }
-  }
-
-  @else {
-
-    @error 'Children should have a parent';
-  }
 }
 
-@mixin modifier($name) {
+@mixin modifier($name, $media: ()) {
 
-  @if & {
+    @if & {
 
-    &.\--#{$name} {
+        &.\--#{'' + $name} {
 
-      @content
+            @content
+        }
+
+        @each $medium in $media {
+
+            @if(map_has_key($base-media-queries, $medium)) {
+                @media #{map_get($base-media-queries, $medium)} {
+
+                    &.\--#{$name}\@#{$medium} {
+
+                        @content
+                    }
+                }
+            }
+
+            @else {
+
+                @warn 'Unknown media query #{$medium} for element #{&} with modifier #{$name}, skipping.';
+            }
+        }
     }
-  }
 
-  @else {
+    @else {
 
-    @error 'Modifiers should have a parent';
-  }
+        @error 'Modifiers should have a parent';
+    }
 }

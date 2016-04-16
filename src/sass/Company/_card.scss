@@ -1,62 +1,54 @@
 @include component(card) {
 
-  $border-color: $grey-smoke;
-  $emphasis-color: $red-alizarin;
-  $title-color: $base-title-color;
-  $author-text-color: $grey-mine;
+    $border-color: $grey-smoke;
+    $emphasis-color: $red-alizarin;
+    $title-color: $base-title-color;
+    $author-text-color: $grey-mine;
 
-  box-shadow: 1px 1px 0 0 darken($border-color, 10%);
-  border: 1px solid $border-color;
-  border-radius: 5px;
-  width: 300px;
-  margin: 1em;
+    box-shadow: 1px 1px 0 0 darken($border-color, 10%);
+    border: 1px solid $border-color;
+    border-radius: 5px;
 
-  @include child(image) {
+    @include child(image) {
 
-    #{$component}:hover & {
-      opacity: .5;
+        #{$component}:hover & {
+            opacity: .5;
+        }
+
+        width: 100%;
     }
 
-    width: 100%;
-  }
+    @include child(title) {
+        margin: 1em 0;
+        padding: 0 1em;
+        font-size: 1.2em;
+        color: $title-color;
 
-  @include child(title) {
-
-    margin: 1em 0;
-    padding: 0 1em;
-    font-size: 1.2em;
-    color: $title-color;
-
-    @include modifier(emphased) {
-
-      color: $emphasis-color;
+        @include modifier(emphased) {
+            color: $emphasis-color;
+        }
     }
-  }
 
-  @include child(content) {
+    @include child(content) {
+        margin-top: 0.5em;
+        padding-left: 1em;
+        padding-right: 1em;
+        line-height: 1.5;
+    }
 
-    margin-top: 0.5em;
-    padding-left: 1em;
-    padding-right: 1em;
-    line-height: 1.5;
-  }
+    @include child(footer) {
+        margin-top: 0.5em;
+        display: flex;
+        justify-content: space-between;
+        padding: 1em;
+        font-size: 0.8em;
+    }
 
-  @include child(footer) {
+    @include child(author) {
+        color: $author-text-color;
+    }
 
-    margin-top: 0.5em;
-    display: flex;
-    justify-content: space-between;
-    padding: 1em;
-    font-size: 0.8em;
-  }
-
-  @include child(author) {
-
-    color: $author-text-color;
-  }
-
-  @include child(date) {
-
-    font-style: italic;
-  }
+    @include child(date) {
+        font-style: italic;
+    }
 }

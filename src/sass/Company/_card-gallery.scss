@@ -1,7 +1,27 @@
-@include component(card-gallery) {
+@include component(grid) {
 
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+
+    @include child(element) {
+        padding: .5em;
+
+        @include modifier(full, phone) {
+            flex: 100% 0 0;
+        }
+
+        @include modifier(half, phablet) {
+            flex: 50% 0 0;
+        }
+
+        @include modifier(third, tablet) {
+            flex: (100%/3) 0 0;
+        }
+
+        @include modifier(auto, from-desktop) {
+            flex: 400px 0 0;
+        }
+    }
 }

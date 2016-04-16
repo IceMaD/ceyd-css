@@ -7,3 +7,27 @@ $base-font-family: Roboto, sans-serif;
 $red-alizarin: #e74c3c;
 $grey-smoke: #eeeeee;
 $grey-mine: #888888;
+
+$breakpoint-from-phablet: 480px;
+$breakpoint-from-tablet: 768px;
+$breakpoint-from-desktop: 1024px;
+$breakpoint-from-ultra: 1920px;
+
+$breakpoint-to-phone: ($breakpoint-from-phablet - 1);
+$breakpoint-to-phablet: ($breakpoint-from-tablet - 1);
+$breakpoint-to-tablet: ($breakpoint-from-desktop - 1);
+$breakpoint-to-desktop: ($breakpoint-from-ultra - 1);
+
+$base-media-queries: (
+    phone: '(max-width: #{$breakpoint-to-phone})',
+    from-phablet: '(min-width: #{$breakpoint-from-phablet})',
+    phablet: '(min-width: #{$breakpoint-from-phablet}) and (max-width: #{$breakpoint-to-phablet})',
+    to-phablet: '(max-width: #{$breakpoint-to-phablet})',
+    from-tablet: '(min-width: #{$breakpoint-from-tablet})',
+    tablet: '(min-width: #{$breakpoint-from-tablet}) and (max-width: #{$breakpoint-to-tablet})',
+    to-tablet: '(max-width: #{$breakpoint-to-tablet})',
+    from-desktop: '(min-width: #{$breakpoint-from-desktop})',
+    desktop: '(min-width: #{$breakpoint-from-desktop}) and (max-width: #{$breakpoint-to-desktop})',
+    to-desktop: '(min-width: #{$breakpoint-to-desktop})',
+    ultra: '(min-width: #{$breakpoint-from-ultra})',
+);
