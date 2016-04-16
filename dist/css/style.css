@@ -13,7 +13,8 @@
   text-transform: none;
   visibility: visible;
   white-space: normal;
-  word-spacing: normal; }
+  word-spacing: normal;
+  margin: 0 !important; }
 
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -67,9 +68,11 @@ table {
   box-shadow: 1px 1px 0 0 #d5d5d5;
   border: 1px solid #eeeeee;
   border-radius: 5px;
-  margin: 0 !important; }
+  width: 100%; }
   .card_image {
-    width: 100%; }
+    width: 100%;
+    height: 200px;
+    background: center/cover no-repeat; }
     .card:hover .card_image {
       opacity: .5; }
   .card_title {
@@ -98,30 +101,115 @@ table {
 .grid {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  margin: 0 !important; }
+  justify-content: center; }
   .grid_element {
-    padding: .5em; }
+    padding: .5em;
+    display: flex; }
     .grid_element.\--full {
-      flex: 100% 0 0; }
+      flex: 100% 0 0;
+      width: 100%; }
     @media (max-width: 479px) {
       .grid_element.\--full\@phone {
-        flex: 100% 0 0; } }
+        flex: 100% 0 0;
+        width: 100%; } }
+    @media (min-width: 480px) {
+      .grid_element.\--full\@from-phablet {
+        flex: 100% 0 0;
+        width: 100%; } }
+    @media (min-width: 480px) and (max-width: 767px) {
+      .grid_element.\--full\@phablet {
+        flex: 100% 0 0;
+        width: 100%; } }
+    @media (max-width: 767px) {
+      .grid_element.\--full\@to-phablet {
+        flex: 100% 0 0;
+        width: 100%; } }
+    @media (min-width: 768px) {
+      .grid_element.\--full\@from-tablet {
+        flex: 100% 0 0;
+        width: 100%; } }
+    @media (min-width: 768px) and (max-width: 1023px) {
+      .grid_element.\--full\@tablet {
+        flex: 100% 0 0;
+        width: 100%; } }
+    @media (max-width: 1023px) {
+      .grid_element.\--full\@to-tablet {
+        flex: 100% 0 0;
+        width: 100%; } }
+    @media (min-width: 1024px) {
+      .grid_element.\--full\@from-desktop {
+        flex: 100% 0 0;
+        width: 100%; } }
     .grid_element.\--half {
-      flex: 50% 0 0; }
+      flex: 50% 0 0;
+      width: 50%; }
     @media (min-width: 480px) and (max-width: 767px) {
       .grid_element.\--half\@phablet {
-        flex: 50% 0 0; } }
+        flex: 50% 0 0;
+        width: 50%; } }
+    @media (max-width: 767px) {
+      .grid_element.\--half\@to-phablet {
+        flex: 50% 0 0;
+        width: 50%; } }
+    @media (min-width: 768px) {
+      .grid_element.\--half\@from-tablet {
+        flex: 50% 0 0;
+        width: 50%; } }
+    @media (min-width: 768px) and (max-width: 1023px) {
+      .grid_element.\--half\@tablet {
+        flex: 50% 0 0;
+        width: 50%; } }
+    @media (max-width: 1023px) {
+      .grid_element.\--half\@to-tablet {
+        flex: 50% 0 0;
+        width: 50%; } }
+    @media (min-width: 1024px) {
+      .grid_element.\--half\@from-desktop {
+        flex: 50% 0 0;
+        width: 50%; } }
     .grid_element.\--third {
-      flex: 33.33333% 0 0; }
+      flex: 33.33333% 0 0;
+      width: 33.33333%; }
     @media (min-width: 768px) and (max-width: 1023px) {
       .grid_element.\--third\@tablet {
-        flex: 33.33333% 0 0; } }
+        flex: 33.33333% 0 0;
+        width: 33.33333%; } }
+    @media (max-width: 1023px) {
+      .grid_element.\--third\@to-tablet {
+        flex: 33.33333% 0 0;
+        width: 33.33333%; } }
+    @media (min-width: 1024px) {
+      .grid_element.\--third\@from-desktop {
+        flex: 33.33333% 0 0;
+        width: 33.33333%; } }
+    .grid_element.\--two-third {
+      flex: 66.66667% 0 0;
+      width: 66.66667%; }
+    @media (min-width: 768px) and (max-width: 1023px) {
+      .grid_element.\--two-third\@tablet {
+        flex: 66.66667% 0 0;
+        width: 66.66667%; } }
+    @media (max-width: 1023px) {
+      .grid_element.\--two-third\@to-tablet {
+        flex: 66.66667% 0 0;
+        width: 66.66667%; } }
+    @media (min-width: 1024px) {
+      .grid_element.\--two-third\@from-desktop {
+        flex: 66.66667% 0 0;
+        width: 66.66667%; } }
     .grid_element.\--auto {
-      flex: 400px 0 0; }
+      flex: 400px 0 0;
+      width: 400px; }
     @media (min-width: 1024px) {
       .grid_element.\--auto\@from-desktop {
-        flex: 400px 0 0; } }
+        flex: 400px 0 0;
+        width: 400px; } }
+    .grid_element.\--twice {
+      flex: 800px 0 0;
+      width: 800px; }
+    @media (min-width: 1024px) {
+      .grid_element.\--twice\@from-desktop {
+        flex: 800px 0 0;
+        width: 800px; } }
 
 /*# sourceMappingURL=style.css.map */

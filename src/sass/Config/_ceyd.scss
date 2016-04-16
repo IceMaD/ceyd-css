@@ -23,6 +23,7 @@ $ceyd-prefix: '';
     visibility: visible;
     white-space: normal;
     word-spacing: normal;
+    margin: 0 !important;
 }
 
 @mixin component($name) {
@@ -39,8 +40,6 @@ $ceyd-prefix: '';
 
             @extend %scope-reset;
             @content;
-
-            margin: 0 !important;
         }
     }
 }

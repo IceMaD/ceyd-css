@@ -3,25 +3,39 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    align-items: center;
 
     @include child(element) {
         padding: .5em;
+        display: flex;
 
-        @include modifier(full, phone) {
+        @include modifier(full, phone from-phablet phablet to-phablet from-tablet tablet to-tablet from-desktop) {
             flex: 100% 0 0;
+            width: 100%;
         }
 
-        @include modifier(half, phablet) {
+        @include modifier(half, phablet to-phablet from-tablet tablet to-tablet from-desktop) {
             flex: 50% 0 0;
+            width: 50%;
         }
 
-        @include modifier(third, tablet) {
+        @include modifier(third, tablet to-tablet from-desktop) {
             flex: (100%/3) 0 0;
+            width: (100%/3);
+        }
+
+        @include modifier(two-third, tablet to-tablet from-desktop) {
+            flex: (100%/3*2) 0 0;
+            width: (100%/3*2);
         }
 
         @include modifier(auto, from-desktop) {
             flex: 400px 0 0;
+            width: 400px;
+        }
+
+        @include modifier(twice, from-desktop) {
+            flex: 800px 0 0;
+            width: 800px;
         }
     }
 }
