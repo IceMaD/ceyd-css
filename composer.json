@@ -1,0 +1,11 @@
+{
+  "name": "icemad/ceyd-css",
+  "type": "symfony-bundle",
+  "description": "CSS code norm",
+  "minimum-stability": "stable",
+  "autoload": {
+    "psr-4": {
+      "IceMaD\\": ""
+    }
+  }
+}
