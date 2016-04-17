@@ -24,7 +24,7 @@ $ceyd-prefix: '';
     visibility: visible;
     white-space: normal;
     word-spacing: normal;
-    margin: 0 !important;
+    margin: 0;
 }
 
 @mixin component($name) {
